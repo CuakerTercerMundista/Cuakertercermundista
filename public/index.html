@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCUCHA MÚSICA GRATIS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <!-- Iconos limpios de alta definición -->
+    <script src="https://unpkg.com"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- BARRA LATERAL IZQUIERDA (Tal cual tu dibujo) -->
+        <aside class="sidebar">
+            <div class="logo">2060</div>
+            
+            <nav class="menu-links">
+                <a href="#" class="active"><i data-lucide="home"></i> INICIO</a>
+                <a href="#"><i data-lucide="music-2"></i> MÚSICA</a>
+                <a href="#"><i data-lucide="video"></i> VIDEOS</a>
+                <a href="#"><i data-lucide="folder-open"></i> MI BIBLIOTECA</a>
+                <a href="#"><i data-lucide="settings"></i> AJUSTES</a>
+            </nav>
+
+                       <!-- Portada y Reproductor Integrado Avanzado -->
+            <div class="sidebar-player">
+                <div class="cover-box" id="cover-container">
+                    <!-- Aquí JS inyectará la imagen real cuando des clic a una canción -->
+                    <i data-lucide="disc" class="disc-icon" id="disc-ui"></i>
+                    <span id="track-title-ui">PORTADA DE LA MÚSICA</span>
+                </div>
+                
+                <!-- BOTONES PROFESIONALES DE CONTROL DE AUDIO -->
+                <div class="media-controls">
+                    <button id="btn-prev" title="Anterior"><i data-lucide="skip-back"></i></button>
+                    <button id="btn-play-pause" title="Play/Pausa"><i data-lucide="play"></i></button>
+                    <button id="btn-next" title="Siguiente"><i data-lucide="skip-forward"></i></button>
+                </div>
+
+                <div class="controls-box">
+                    <audio id="audio-player" src=""></audio>
+                </div>
+            </div>
+
+
+        <!-- PANEL CENTRAL DERECHO -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-box">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="search-input" placeholder="BUSCAR...">
+                </div>
+            </header>
+            
+            <header class="top-bar">
+                <div class="search-box">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <!-- Input capturado por app.js -->
+                    <input type="text" id="search-input" placeholder="BUSCAR...">
+                </div>
+            </header>
+
+            <!-- Sección 1: Actividad Reciente -->
+            <section class="content-section">
+                <h2>ACTIVIDAD RECIENTE</h2>
+                <div class="horizontal-scroll" id="recientes-container">
+                    <div class="card">
+                        <div class="card-image"><i data-lucide="history"></i></div>
+                        <p>Último Flujo Analizado</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 2: Tus Favoritos -->
+            <section class="content-section">
+                <h2>TUS FAVORITOS</h2>
+                <div class="horizontal-scroll" id="favoritos-container">
+                    <div class="card">
+                        <div class="card-image-fav"><i data-lucide="heart"></i></div>
+                        <p>Pistas Preferidas</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 3: Archivos Offline (Aquí JavaScript inyectará tus canciones) -->
+            <section class="content-section">
+                <h2>ARCHIVOS OFFLINE</h2>
+                <div class="horizontal-scroll" id="offline-container">
+                    <!-- Se llena dinámicamente vía API -->
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <!-- Inicializador automático de iconos vectoriales -->
+    <script>lucide.createIcons();</script>
+    <!-- Vinculación del cerebro JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

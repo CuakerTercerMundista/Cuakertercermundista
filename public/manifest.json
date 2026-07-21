@@ -1,0 +1,16 @@
+{
+  "short_name": "Beg1nn3r 2060",
+  "name": "Beg1nn3r Framework Multimedia v3.0",
+  "icons": [
+    {
+      "src": "https://unpkg.com",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0a0a0c",
+  "theme_color": "#1db954",
+  "display": "standalone",
+  "orientation": "portrait"
+}
